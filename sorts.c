@@ -117,8 +117,8 @@ void sort_quick(int *ar, size_t N)
 
 void sort_quickLR(int *ar, size_t N)
 {
-    if (N > 1) {   
-
+    if (N > 1)
+    {
         int *L = ar, *R = ar + N - 1;
         int f = 0;
 
