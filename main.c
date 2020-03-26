@@ -23,12 +23,8 @@
 // Number of available sorts.
 #define N_sorts 7
 
-int *randArray(size_t);
-int *randArrayLim(size_t);
-int *randArrayShf(size_t);
 unsigned long checksum(int *ar, size_t N);
 void printArray(int *, size_t);
-int condition(const void *a, const void *b);
 
 int main(int argc, char *argv[])
 {
@@ -145,10 +141,4 @@ void printArray(int *ar, size_t N)
     {
         printf("%i%s", ar[i], i == N - 1 ? "]\n" : ", ");
     }
-}
-
-// Condition for sorting integer type.
-int condition(const void *a, const void *b)
-{
-    return *((int *)a) - *((int *)b);
 }
