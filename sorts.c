@@ -1,6 +1,5 @@
 // sorts.c
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "sorts.h"
 
@@ -36,16 +35,6 @@ void randomize(int *ar, size_t N)
     {
         int r = rand() % N;
         swElement(ar + i, ar + r);
-    }
-}
-
-// Prints array in [a0, a1, ..., aN-1] format.
-void printAr(const int *ar, size_t N)
-{
-    printf("[");
-    for (int i = 0; i < N; i++)
-    {
-        printf("%i%s", ar[i], i == N - 1 ? "]\n" : ", ");
     }
 }
 
