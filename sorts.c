@@ -21,7 +21,7 @@ int isSorted(int *ar, size_t N)
 
 
 // Swaps contents of two integer pointers.
-void swElement(int *a, int *b)
+void swp(int *a, int *b)
 {
     int x;
     x = *a;
@@ -34,7 +34,7 @@ void randomize(int *ar, size_t N)
     for(int i = 0; i < N; i++)
     {
         int r = rand() % N;
-        swElement(ar + i, ar + r);
+        swp(ar + i, ar + r);
     }
 }
 
@@ -50,7 +50,7 @@ void sort_bubble(int *ar, size_t N)
             if(ar[i] > ar[i + 1])
             {
                 sorted = 0;
-                swElement(ar + i, ar + i + 1);
+                swp(ar + i, ar + i + 1);
             }
         }
         N--;
@@ -65,7 +65,7 @@ void sort_insert(int *ar, size_t N)
         {
             if (ar[j + 1] < ar[j])
             {
-                swElement(ar + j + 1, ar + j);
+                swp(ar + j + 1, ar + j);
             } else
             {
                 break;
@@ -88,7 +88,7 @@ void sort_select(int *ar, size_t N)
                 x = ar + j;
             }
         }
-        swElement(x, ar + i);
+        swp(x, ar + i);
     }
 }
 
@@ -104,10 +104,10 @@ void sort_quick(int *ar, size_t N)
         {
             if (ar[i] < *p)
             {
-                swElement(ar + i, ar + j++);
+                swp(ar + i, ar + j++);
             }
         }
-        swElement(ar + j, p);
+        swp(ar + j, p);
         p = ar + j;
 
         sort_quick(ar, p - ar); // Left side.
@@ -126,7 +126,7 @@ void sort_quickLR(int *ar, size_t N)
         {
             if(*L > *R)
             {
-                swElement(L, R);
+                swp(L, R);
                 f = f == 0 ? 1 : 0;
             }
 
