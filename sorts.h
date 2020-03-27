@@ -30,6 +30,9 @@ void sort_quickLR(int *ar, size_t N);
 // Merge sort algorithm.
 void sort_merge(int *ar, size_t N);
 
+// Heap sort algorithm.
+void sort_heap(int *ar, size_t N);
+
 // Bogo sort algorithm. Only gets 1000 tries before giving up.
 void sort_bogo(int *ar, size_t N);
 

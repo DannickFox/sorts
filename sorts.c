@@ -192,6 +192,64 @@ void sort_merge(int *ar, size_t N)
     }
 }
 
+void heapify(int *ar, int i, size_t N)
+{
+    if (i < N)
+    {
+        // Calculate indices of L and R branches.
+        int L = 2 * i + 1, R = L + 1, x = i;
+        
+        if (L < N && ar[x] < ar[L]) x = L;
+        if (R < N && ar[x] < ar[R]) x = R;
+        
+        if (x != i) 
+        {
+            swp(ar + x, ar + i);
+            heapify(ar, x, N);
+        }   
+    }
+}
+
+// Initial heap conversion.
+void createHeap(int *ar, int i, size_t N)
+{
+    if (i < N)
+    {
+        // Calculate indices of L and R branches.
+        int L = 2 * i + 1, R = L + 1, x = i;
+        
+        createHeap(ar, L, N);
+        createHeap(ar, R, N);
+        
+        if (L < N && ar[x] < ar[L]) x = L;
+        if (R < N && ar[x] < ar[R]) x = R;
+        
+        if (x != i) 
+        {
+            swp(ar + x, ar + i);
+            heapify(ar, x, N);
+        }   
+    }
+}
+
+
+void sort_heap(int *ar, size_t N)
+{
+    size_t pN = N;
+
+    // Convert initial array into heap.
+    createHeap(ar, 0, N);
+
+    while (N > 0)
+    {
+        // Convert lower array to max heap.
+        heapify(ar, 0, N);
+
+        // Swap head to end of list.
+        swp(ar, ar + --N);
+    }
+}
+
 void sort_bogo(int *ar, size_t N)
 {
     int tries = 0; // Counter to avoid infinite loop.

@@ -21,7 +21,7 @@
 // Default input sort option.
 #define d_S 5
 // Number of available sorts.
-#define N_sorts 7
+#define N_sorts 8
 
 unsigned long checksum(int *ar, size_t N);
 void printArray(int *, size_t);
@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
 {
 
     void (*sorts[N_sorts])(int *, size_t) = { // Available sorting algorithms to test.
-        sort_bubble, sort_insert, sort_select, sort_quick, sort_quickLR, sort_merge, sort_bogo
+        sort_bubble, sort_insert, sort_select, sort_quick, sort_quickLR, sort_merge, sort_heap, sort_bogo
     };
     char *sortNames[N_sorts] = { // Names for user selection.
-        "bubble", "insertion", "selection", "quick", "quickLR", "merge", "bogo"
+        "bubble", "insertion", "selection", "quick", "quickLR", "merge", "heap", "bogo"
     };
     int sortOp = d_S; // Option set to default.
 
