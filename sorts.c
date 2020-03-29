@@ -133,7 +133,6 @@ void sort_quickLR(int *ar, size_t N)
             // Shifts pointers according to last swap.
             R = R - !f;
             L = L + f;
-
         }
 
         // Recursive divide & conquer. Array divided by resulting pivot.
