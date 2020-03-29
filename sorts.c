@@ -127,12 +127,13 @@ void sort_quickLR(int *ar, size_t N)
             if(*L > *R)
             {
                 swp(L, R);
-                f = f == 0 ? 1 : 0;
+                f ^= 1;
             }
 
             // Shifts pointers according to last swap.
-            if (f == 0) R = R - 1;
-            else L = L + 1;
+            R = R - !f;
+            L = L + f;
+
         }
 
         // Recursive divide & conquer. Array divided by resulting pivot.
