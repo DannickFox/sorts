@@ -62,6 +62,8 @@ void sort_insert(int *ar, size_t N)
     for(int i = 1; i < N; i++)
     {
         int j = i;
+
+        // Shift element to its lowest position.
         while (j > 0 && ar[j] < ar[j - 1])
         {
             swp(ar + j, ar + j - 1);
