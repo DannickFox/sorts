@@ -59,17 +59,13 @@ void sort_bubble(int *ar, size_t N)
 
 void sort_insert(int *ar, size_t N)
 {
-    for(int i = 0; i < N - 1; i++)
+    for(int i = 1; i < N; i++)
     {
-        for(int j = i; j >= 0; j--)
+        int j = i;
+        while (j > 0 && ar[j] < ar[j - 1])
         {
-            if (ar[j + 1] < ar[j])
-            {
-                swp(ar + j + 1, ar + j);
-            } else
-            {
-                break;
-            }
+            swp(ar + j, ar + j - 1);
+            j--;
         }
     }
 }
