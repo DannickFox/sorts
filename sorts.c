@@ -129,7 +129,7 @@ void sort_quickLR(int *ar, size_t N)
             }
 
             // Shifts pointers according to last swap.
-            R = R - !f;
+            R = R - (f ^ 1);
             L = L + f;
         }
 
